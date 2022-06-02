@@ -1,0 +1,17 @@
+{
+  "name": "e2e-testsuite-platform",
+  "version": "1.0.0",
+  "description": "e2e testsuite platform for Shopware 6",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/momocode-de/e2e-testsuite-platform.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/momocode-de/e2e-testsuite-platform/issues"
+  },
+  "homepage": "https://github.com/momocode-de/e2e-testsuite-platform#readme",
+  "dependencies": {
+    "compare-versions": "^3.6.0"
+  }
+}
