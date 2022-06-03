@@ -1,4 +1,4 @@
-export default class FixtureManager {
+module.exports = class FixtureManager {
     constructor() {
         this.fixtures = Cypress.config('momoFixtures');
         this.fixtureTypes = Cypress.config('momoFixtureTypes');

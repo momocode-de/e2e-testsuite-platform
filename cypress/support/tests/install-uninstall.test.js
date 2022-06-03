@@ -1,6 +1,6 @@
 import Route from "../components/route";
 
-export default class InstallUninstallTest {
+module.exports = class InstallUninstallTest {
     describe(
         pluginName,
         prepareUninstallTest,
