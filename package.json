@@ -12,10 +12,6 @@
   },
   "homepage": "https://github.com/momocode-de/e2e-testsuite-platform#readme",
   "dependencies": {
-    "@babel/core": "7.14.8",
-    "@babel/plugin-proposal-object-rest-spread": "7.14.7",
-    "@babel/preset-env": "7.14.9",
-    "@babel/register": "7.14.5",
     "compare-versions": "^3.6.0"
   }
 }
