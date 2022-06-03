@@ -1,4 +1,4 @@
-const FixtureManager = require('../service/fixture-manager.service');
+import FixtureManager from '../service/fixture-manager.service';
 const compareVersions = require('compare-versions');
 
 cy.fixtureManager = new FixtureManager();
