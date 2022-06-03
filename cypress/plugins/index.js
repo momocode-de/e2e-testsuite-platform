@@ -1,6 +1,6 @@
 const path = require('path');
 
-export default async (on, config) => {
+module.exports = async (on, config) => {
     const fixturesFilePath = path.resolve(config.projectRoot + '/fixtures.js');
     const fixtureTypesFilePath = path.resolve(config.projectRoot + '/fixture-types.js');
 
