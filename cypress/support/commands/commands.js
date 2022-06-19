@@ -110,7 +110,7 @@ Cypress.Commands.add('onlyUntilVersion', (maxVersion, cb) => {
  * This is a copy of typeSingleSelect, but with {force: true} in clear function
  *
  * @memberOf Cypress.Chainable#
- * @name typeSingleSelect
+ * @name typeSingleSelectForce
  * @function
  * @param {String} value - Desired value of the element
  * @param {String} selector - selector of the element
