@@ -105,3 +105,55 @@ Cypress.Commands.add('onlyUntilVersion', (maxVersion, cb) => {
 
     cy.onlyOn(isVersionValid, cb);
 });
+
+/**
+ * This is a copy of typeSingleSelect, but with {force: true} in clear function
+ *
+ * @memberOf Cypress.Chainable#
+ * @name typeSingleSelect
+ * @function
+ * @param {String} value - Desired value of the element
+ * @param {String} selector - selector of the element
+ */
+Cypress.Commands.add(
+  'typeSingleSelectForce',
+  {
+      prevSubject: 'element',
+  },
+  (subject, value, selector) => {
+      const resultPrefix = '.sw-select';
+      const inputCssSelector = `.sw-select__selection input`;
+
+      cy.wrap(subject).should('be.visible');
+      cy.wrap(subject).click();
+
+      // type in the search term if available
+      if (value) {
+          cy.get('.sw-select-result-list').should('exist');
+          cy.get(`${selector} ${inputCssSelector}`).clear({force: true});
+          cy.get(`${selector} ${inputCssSelector}`).type(value);
+          cy.get(`${selector} ${inputCssSelector}`).should(
+            'have.value',
+            value
+          );
+
+          // Wait the debounce time for the search to begin
+          cy.wait(500);
+
+          cy.get(`${selector}.sw-loader__element`).should('not.exist');
+
+          cy.get(`${selector} .is--disabled`).should('not.exist');
+
+          cy.get('.sw-select-result__result-item-text').should('be.visible');
+
+          cy.get('.sw-select-result__result-item-text')
+            .contains(value)
+            .click({force: true});
+      } else {
+          // Select the first element
+          cy.get(`${resultPrefix}-option--0`).click({force: true});
+      }
+
+      cy.get(`${selector} .sw-select-result-list`).should('not.exist');
+  }
+);
