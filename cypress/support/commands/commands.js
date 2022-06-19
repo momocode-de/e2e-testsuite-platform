@@ -131,7 +131,7 @@ Cypress.Commands.add(
       if (value) {
           cy.get('.sw-select-result-list').should('exist');
           cy.get(`${selector} ${inputCssSelector}`).clear({force: true});
-          cy.get(`${selector} ${inputCssSelector}`).type(value);
+          cy.get(`${selector} ${inputCssSelector}`).type(value, {force: true});
           cy.get(`${selector} ${inputCssSelector}`).should(
             'have.value',
             value
