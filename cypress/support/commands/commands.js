@@ -18,8 +18,8 @@ Cypress.Commands.add('typeProductNumberToProductSelect', {
     cy.wrap(subject).click();
 
     cy.get('.sw-select-result-list').should('exist');
-    cy.get(`${selector} ${inputCssSelector}`).clear();
-    cy.get(`${selector} ${inputCssSelector}`).type(productNumber);
+    cy.get(`${selector} ${inputCssSelector}`).clear({force: true});
+    cy.get(`${selector} ${inputCssSelector}`).type(productNumber, {force: true});
     cy.get(`${selector} ${inputCssSelector}`).should('have.value', productNumber);
 
     // Wait the debounce time for the search to begin
@@ -54,8 +54,8 @@ Cypress.Commands.add('typeSingleSelectAndNotSelect', {
     cy.wrap(subject).click();
 
     cy.get('.sw-select-result-list').should('exist');
-    cy.get(`${selector} ${inputCssSelector}`).clear();
-    cy.get(`${selector} ${inputCssSelector}`).type(value);
+    cy.get(`${selector} ${inputCssSelector}`).clear({force: true});
+    cy.get(`${selector} ${inputCssSelector}`).type(value, {force: true});
     cy.get(`${selector} ${inputCssSelector}`).should('have.value', value);
 
     // Wait the debounce time for the search to begin
